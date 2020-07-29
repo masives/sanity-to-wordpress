@@ -2,7 +2,7 @@
 
 1. Generate bundle for migration
    ```
-   node index
+   node index --url https://your-site-url
    ```
 2. Import it to sanity
 
