@@ -1,3 +1,17 @@
+# What is this script?
+
+The script goal is to make migrating from wordpress to sanity easier. It allows you to generate `.ndjson` file ready to be imported into your sanity database.
+
+Since some opinions are made on how to shape authors, image and categories please check the [schemas](./schemas) directory. If you want to adjust the shape of resulting objects you can modify map functions in [resources.js](lib/resources.js).
+
+The script downloads posts, authors and categories from wordpress api, maps them to objects in line with schemas in [schemas](./schemas) directory and generates file that can be imported into you sanity database.
+
+It handles few edge cases:
+
+- the script will warn you on images being downloaded from google cdn (which cannot be imported using sanity-cli)
+- it handles more than 100 entries per type
+- it allows blacklisting broken/non-existing images
+
 # How to run it
 
 1. Generate bundle for migration
