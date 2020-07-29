@@ -1,0 +1,14 @@
+{
+  "name": "wordpress-migration",
+  "version": "1.0.0",
+  "main": "migrate-wordpress.js",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/block-tools": "^1.149.4",
+    "@sanity/schema": "^1.149.4",
+    "axios": "^0.19.2",
+    "he": "^1.2.0",
+    "ndjson": "^1.5.0",
+    "sanitize-html": "^1.24.0"
+  }
+}
