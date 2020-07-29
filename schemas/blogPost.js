@@ -62,7 +62,7 @@ module.exports = {
     {
       name: 'seo',
       title: 'SEO',
-      type: 'seo-tools', 
+      type: 'seo-tools',
       options: {
         baseUrl: 'YOUR-BASE-URL', // (REQUIRED) This is the baseUrl for your site
         slug(doc) {

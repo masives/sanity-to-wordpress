@@ -68,7 +68,7 @@ const enhancedImage = {
       name: 'alt',
       type: 'string',
       options: {
-        isHighlighted: true, 
+        isHighlighted: true,
       },
     },
     {
@@ -76,7 +76,7 @@ const enhancedImage = {
       type: 'string',
       title: 'Caption',
       options: {
-        isHighlighted: true, 
+        isHighlighted: true,
       },
     },
   ],
