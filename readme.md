@@ -31,6 +31,12 @@ You can add flags to replace existing documents or add only missing ones
    5. Have additional fields (seo, dates) moved along
 5. Save everything in ndjson file to be consumed by sanity-cli
 
+# Important notes
+
+- script doesn't check if the file provide in wordpress exists which will break sanity import! You have to add the url to [missingImagesBlackList.js](missingImagesBlackList.js)
+- images are exported as enhancedImage which includes alt and caption
+- you can see the reference to schema used in [schemas](./schemas) directory
+
 # TODO
 
 - Parametrize api url

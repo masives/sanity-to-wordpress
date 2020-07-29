@@ -58,12 +58,13 @@ module.exports = {
       type: 'blockContent',
       validation: (Rule) => [Rule.required()],
     },
+    // https://www.sanity.io/plugins/sanity-plugin-seo-tools
     {
       name: 'seo',
       title: 'SEO',
-      type: 'seo-tools', // use seo-tools type
+      type: 'seo-tools', 
       options: {
-        baseUrl: 'https://10clouds.com/blog', // (REQUIRED) This is the baseUrl for your site
+        baseUrl: 'YOUR-BASE-URL', // (REQUIRED) This is the baseUrl for your site
         slug(doc) {
           // (REQUIRED) a function to return the sug of the current page, which will be appended to the baseUrl
           return doc.slug.current;

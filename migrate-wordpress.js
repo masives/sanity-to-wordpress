@@ -2,7 +2,7 @@ const { getCategories, getPosts, getUsers, getWpMedia } = require('./lib/resourc
 const { saveDataAsNdJson } = require('./lib/ndjson');
 
 (async () => {
-  // download links to all wordpress_media
+  // download links to all wordpress_media which are referenced in posts
   const wpMedia = await getWpMedia();
 
   Promise.all([getUsers(), getCategories(), getPosts(wpMedia)]).then(([users, categories, blogPosts]) => {
