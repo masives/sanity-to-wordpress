@@ -39,7 +39,6 @@ You can add flags to replace existing documents or add only missing ones
 
 # TODO
 
-- Parametrize api url
 - move blacklist to separate file that is not tracked by github
 
 # Acknowledgments
