@@ -2,7 +2,7 @@
 
 The script goal is to make migrating from wordpress to sanity easier. It allows you to generate `.ndjson` file ready to be imported into your sanity database.
 
-Since some opinions are made on how to shape authors, image and categories please check the [schemas](./schemas) directory. If you want to adjust the shape of resulting objects you can modify map functions in [resources.js](lib/resources.js).
+Schemas are in line with default sanity gatsby starter, which you can create on https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gatsby-blog
 
 The script downloads posts, authors and categories from wordpress api, maps them to objects in line with schemas in [schemas](./schemas) directory and generates file that can be imported into you sanity database.
 
@@ -18,12 +18,18 @@ It handles few edge cases:
    ```
    node index --url https://your-site-url
    ```
-2. Import it to sanity
+2. Import each chunk to sanity
 
    This script must be ran from your sanity folder ie. the one containing sanity.json!
 
    ```
        sanity dataset import ROUTE-TO-FILE DATABASE-NAME
+   ```
+
+   It could look like
+
+   ```
+      sanity dataset import ../../sanity-to-wordpress-miration-tool/wordpress-data-1.ndjson production --replace
    ```
 
 You can add flags to replace existing documents or add only missing ones
@@ -44,7 +50,9 @@ You can add flags to replace existing documents or add only missing ones
    3. Have their content be written in [portable text](https://www.sanity.io/guides/introduction-to-portable-text)
    4. Have images moved along
    5. Have additional fields (seo, dates) moved along
-5. Save everything in ndjson file to be consumed by sanity-cli
+5. Save everything in ndjson file chunks to be consumed by sanity-cli
+
+Ndjson is split into chunks because sanity-cli will break if the resource is temporary unavailable. That way instead of retrying importing 300 documents + assets you do it only for current chunk.
 
 # Important notes
 
