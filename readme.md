@@ -22,20 +22,20 @@ It handles few edge cases:
    This script must be ran from your sanity folder ie. the one containing sanity.json!
 
    ```
-       sanity dataset import ROUTE-TO-FILE DATABASE-NAME
+   sanity dataset import ROUTE-TO-FILE DATABASE-NAME
    ```
 
    It could look like
 
    ```
-      sanity dataset import ../../sanity-to-wordpress-miration-tool/wordpress-data-1.ndjson production --replace
+   sanity dataset import ../../sanity-to-wordpress-miration-tool/wordpress-data-1.ndjson production --replace
    ```
 
 You can add flags to replace existing documents or add only missing ones
 
 ```
-    sanity dataset import ROUTE-TO-FILE DATABASE-NAME --replace
-    sanity dataset import ROUTE-TO-FILE DATABASE-NAME --missing
+sanity dataset import ROUTE-TO-FILE DATABASE-NAME --replace
+sanity dataset import ROUTE-TO-FILE DATABASE-NAME --missing
 ```
 
 # How to use blocklist
