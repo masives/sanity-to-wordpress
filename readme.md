@@ -38,6 +38,25 @@ You can add flags to replace existing documents or add only missing ones
     sanity dataset import ROUTE-TO-FILE DATABASE-NAME --missing
 ```
 
+# How to use blocklist
+
+If the media asset is not available at the source wordpress site than the sanity-cli will throw error during the import. It will looks similar to the one below.
+
+You can see that the asset "https://10clouds.com/wp-content/uploads/2019/05/programisci-1024x683.jpg" is not available. If that's the case you can add it to blocklist array at [missingImagesBlockList.js](missingImagesBlockList.js) to and rerun script to ignore this asset.
+
+```
+➜  studio git:(master) ✗ sanity dataset import ../../sanity-to-wordpress-miration-tool/wordpress-data-2.ndjson production --replace
+✔ [100%] Fetching available datasets
+✔ [100%] Reading/validating data file (424ms)
+✔ [100%] Importing documents (1.42s)
+✖ [ 98%] Importing assets (files/images) (39.53s)
+Error: Error while fetching asset from "https://10clouds.com/wp-content/uploads/2019/05/programisci-1024x683.jpg":
+File does not exist at the specified endpoint
+    at getUri (~/workspace/sanity-gatsby-blog/studio/node_modules/@sanity/import/lib/util/getHashedBufferForUri.js:44:14)
+    at ClientRequest.onresponse (~/workspace/sanity-gatsby-blog/studio/node_modules/get-uri/http.js:152:14)
+
+```
+
 # How the script works
 
 1. Download wordpress media (images,thumbnails) as we will need to download them to new CMS.
