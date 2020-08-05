@@ -4,13 +4,12 @@ The script goal is to make migrating from wordpress to sanity easier. It allows 
 
 Schemas are in line with default sanity gatsby starter, which you can create on https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gatsby-blog
 
-The script downloads posts, authors and categories from wordpress api, maps them to objects in line with schemas in [schemas](./schemas) directory and generates file that can be imported into you sanity database.
-
 It handles few edge cases:
 
 - the script will warn you on images being downloaded from google cdn (which cannot be imported using sanity-cli)
 - it handles more than 100 entries per type
-- it allows blacklisting broken/non-existing images
+- it allows blocklisting broken/non-existing images
+- it chunks the resulting bundle into 50 documents size files
 
 # How to run it
 
@@ -59,10 +58,7 @@ Ndjson is split into chunks because sanity-cli will break if the resource is tem
 - script doesn't check if the file provide in wordpress exists which will break sanity import! You have to add the url to [missingImagesBlackList.js](missingImagesBlackList.js)
 - images are exported as enhancedImage which includes alt and caption
 - you can see the reference to schema used in [schemas](./schemas) directory
-
-# TODO
-
-- move blacklist to separate file that is not tracked by github
+- errors are input into `resources.errors.log` file
 
 # Acknowledgments
 
