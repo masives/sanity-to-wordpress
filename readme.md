@@ -55,7 +55,7 @@ Ndjson is split into chunks because sanity-cli will break if the resource is tem
 
 # Important notes
 
-- script doesn't check if the file provide in wordpress exists which will break sanity import! You have to add the url to [missingImagesBlackList.js](missingImagesBlackList.js)
+- script doesn't check if the file provide in wordpress exists which will break sanity import! You have to add the url to [missingImagesBlocklist.js](missingImagesBlocklist.js)
 - images are exported as enhancedImage which includes alt and caption
 - you can see the reference to schema used in [schemas](./schemas) directory
 - errors are input into `resources.errors.log` file
