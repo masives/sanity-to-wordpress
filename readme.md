@@ -1,8 +1,8 @@
 # What is this script?
 
-The script goal is to make migrating from wordpress to sanity easier. It allows you to generate `.ndjson` file ready to be imported into your sanity database.
+The script goal is to make migrating from Wordpress to Sanity easier. It allows you to generate `.ndjson` file ready to be imported into your Sanity database.
 
-Schemas are in line with default sanity gatsby starter, which you can create on https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gatsby-blog
+Schemas are in line with default Sanity gatsby starter, which you can create on https://www.sanity.io/create?template=sanity-io%2Fsanity-template-gatsby-blog
 
 It handles few edge cases:
 
@@ -17,9 +17,9 @@ It handles few edge cases:
    ```
    node index --url https://your-site-url
    ```
-2. Import each chunk to sanity
+2. Import each chunk to Sanity
 
-   This script must be ran from your sanity folder ie. the one containing sanity.json!
+   This script must be ran from your Sanity folder ie. the one containing sanity.json!
 
    ```
    sanity dataset import ROUTE-TO-FILE DATABASE-NAME
@@ -40,7 +40,7 @@ sanity dataset import ROUTE-TO-FILE DATABASE-NAME --missing
 
 # How to use blocklist
 
-If the media asset is not available at the source wordpress site than the sanity-cli will throw error during the import. It will looks similar to the one below.
+If the media asset is not available at the source Wordpress site than the sanity-cli will throw error during the import. It will looks similar to the one below.
 
 You can see that the asset "https://10clouds.com/wp-content/uploads/2019/05/programisci-1024x683.jpg" is not available. If that's the case you can add it to blocklist array at [missingImagesBlockList.js](missingImagesBlockList.js) to and rerun script to ignore this asset.
 
@@ -59,7 +59,7 @@ File does not exist at the specified endpoint
 
 # How the script works
 
-1. Download wordpress media (images,thumbnails) as we will need to download them to new CMS.
+1. Download Wordpress media (images,thumbnails) as we will need to download them to new CMS.
 2. Download users
 3. Download categories
 4. Download blogposts that will:
@@ -74,7 +74,7 @@ Ndjson is split into chunks because sanity-cli will break if the resource is tem
 
 # Important notes
 
-- script doesn't check if the file provide in wordpress exists which will break sanity import! You have to add the url to [missingImagesBlocklist.js](missingImagesBlocklist.js)
+- script doesn't check if the file provide in Wordpress exists which will break Sanity import! You have to add the url to [missingImagesBlocklist.js](missingImagesBlocklist.js)
 - images are exported as enhancedImage which includes alt and caption
 - you can see the reference to schema used in [schemas](./schemas) directory
 - errors are input into `resources.errors.log` file
