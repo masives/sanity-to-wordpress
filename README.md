@@ -13,16 +13,22 @@ It handles few edge cases:
 
 # How to run it
 
-1. Generate bundle for migration
+1. Clone the repo
+
+   ```
+   git clone git@github.com:10clouds/wordpress-sanity-migration-tool.git
+   ```
+
+2. Generate bundle for migration
    ```
    node index --url https://your-site-url
    ```
-2. Import each chunk to Sanity
+3. Import each chunk to Sanity
 
    This script must be ran from your Sanity folder ie. the one containing sanity.json!
 
    ```
-   sanity dataset import ROUTE-TO-FILE DATABASE-NAME
+   sanity dataset import PATH-TO-FILE DATABASE-NAME
    ```
 
    It could look like
