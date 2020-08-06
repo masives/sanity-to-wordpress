@@ -21,7 +21,7 @@ It handles few edge cases:
 
 2. Generate bundle for migration
    ```
-   node index --url https://your-site-url
+   node index --url https://wordpress-site-url
    ```
 3. Import each chunk to Sanity
 
