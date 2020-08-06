@@ -2,7 +2,7 @@ const { Command } = require('commander');
 const { getWordpressData } = require('./lib/resources');
 const { saveDataAsNdJson } = require('./lib/ndjson');
 
-const startsWithHttpRegex = /^http/;
+const startsWithHttpRegex = /^https?:\/\//;
 const program = new Command();
 
 program.option('-u, --url <api-url>', 'base url without endpoint ').parse(process.argv);
