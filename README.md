@@ -88,3 +88,5 @@ Ndjson is split into chunks because sanity-cli will break if the resource is tem
 # Acknowledgments
 
 When creating this solution I've leaned heavily on [wordpress-to-sanity repository](https://github.com/kmelve/wordpress-to-sanity).
+
+Made with :heart: by [10Clouds](https://10clouds.com/)
