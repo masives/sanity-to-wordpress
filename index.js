@@ -5,10 +5,10 @@ const { saveDataAsNdJson } = require('./lib/ndjson');
 const startsWithHttpRegex = /^https?:\/\//;
 const program = new Command();
 
-program.option('-u, --url <api-url>', 'base url without endpoint ').parse(process.argv);
+program.option('-u, --url <wordpress-site-url>', 'wordpress site url with protocol eg. https://my-wordpress.site.com').parse(process.argv);
 
 if (!program.url) {
-  console.error('Please provide --url <wordpress-site-url>');
+  console.error('Please provide correct --url <wordpress-site-url>');
   process.exit(1);
 }
 

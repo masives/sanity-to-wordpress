@@ -19,16 +19,16 @@ It handles few edge cases:
    git clone git@github.com:10clouds/wordpress-sanity-migration-tool.git
    ```
 
-2. Generate bundle for migration
+2. Generate bundle for migration.
    ```
    node index --url https://wordpress-site-url
    ```
 3. Import each chunk to Sanity
 
-   This script must be ran from your Sanity folder ie. the one containing sanity.json!
+   Command below must be ran from your Sanity directory ie. the one containing sanity.json!
 
    ```
-   sanity dataset import PATH-TO-FILE DATABASE-NAME
+   sanity dataset import <PATH-TO-GENERATED-NDJSON-FILE> <SANITY-DATABASE-NAME>
    ```
 
    It could look like
@@ -40,8 +40,8 @@ It handles few edge cases:
 You can add flags to replace existing documents or add only missing ones
 
 ```
-sanity dataset import ROUTE-TO-FILE DATABASE-NAME --replace
-sanity dataset import ROUTE-TO-FILE DATABASE-NAME --missing
+sanity dataset import <PATH-TO-GENERATED-NDJSON-FILE> <SANITY-DATABASE-NAME> --replace 
+sanity dataset import <PATH-TO-GENERATED-NDJSON-FILE> <SANITY-DATABASE-NAME> --missing 
 ```
 
 # How to use blocklist
@@ -65,7 +65,7 @@ File does not exist at the specified endpoint
 
 # How the script works
 
-1. Download Wordpress media (images,thumbnails) as we will need to download them to new CMS.
+1. Download Wordpress media (images,thumbnails) as we need to include them to the new CMS.
 2. Download users
 3. Download categories
 4. Download blogposts that will:
