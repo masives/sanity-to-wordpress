@@ -13,22 +13,18 @@ It handles few edge cases:
 
 # How to run it
 
-1. Clone the repo
+1. Generate bundle for migration
+   ```
+   node index --url https://your-site-url
+   ```
+// FIXME - what kind of elements the bundle contain?  You can describe here the expected result briefly. 
+ 
+2. Import each chunk to Sanity
+
+   Command below must be ran from your Sanity directory ie. the one containing sanity.json! // FIXME
 
    ```
-   git clone git@github.com:10clouds/wordpress-sanity-migration-tool.git
-   ```
-
-2. Generate bundle for migration
-   ```
-   node index --url https://wordpress-site-url
-   ```
-3. Import each chunk to Sanity
-
-   This script must be ran from your Sanity folder ie. the one containing sanity.json!
-
-   ```
-   sanity dataset import PATH-TO-FILE DATABASE-NAME
+   sanity dataset import <PATH-TO-GENERATED-NDJSON-FILE> <SANITY-DATABASE-NAME> // FIXME 
    ```
 
    It could look like
@@ -37,12 +33,11 @@ It handles few edge cases:
    sanity dataset import ../../sanity-to-wordpress-miration-tool/wordpress-data-1.ndjson production --replace
    ```
 
-You can add flags to replace existing documents or add only missing ones
-
-```
-sanity dataset import ROUTE-TO-FILE DATABASE-NAME --replace
-sanity dataset import ROUTE-TO-FILE DATABASE-NAME --missing
-```
+    You can add flags to replace existing documents or add only missing ones
+    ```
+    sanity dataset import <PATH-TO-GENERATED-NDJSON-FILE> <SANITY-DATABASE-NAME> --replace // FIXME
+    sanity dataset import <PATH-TO-GENERATED-NDJSON-FILE> <SANITY-DATABASE-NAME> --missing // FIXME
+    ```
 
 # How to use blocklist
 
@@ -65,7 +60,7 @@ File does not exist at the specified endpoint
 
 # How the script works
 
-1. Download Wordpress media (images,thumbnails) as we will need to download them to new CMS.
+1. Download Wordpress media (images,thumbnails) as we need to include them to the new CMS.
 2. Download users
 3. Download categories
 4. Download blogposts that will:
@@ -88,5 +83,3 @@ Ndjson is split into chunks because sanity-cli will break if the resource is tem
 # Acknowledgments
 
 When creating this solution I've leaned heavily on [wordpress-to-sanity repository](https://github.com/kmelve/wordpress-to-sanity).
-
-Made with :heart: by [10Clouds](https://10clouds.com/)
