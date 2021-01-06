@@ -6,7 +6,7 @@
   "dependencies": {
     "@sanity/block-tools": "1.149.4",
     "@sanity/schema": "1.149.4",
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "commander": "^6.0.0",
     "he": "1.2.0",
     "jsdom": "16.3.0",
